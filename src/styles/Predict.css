@@ -1,0 +1,98 @@
+
+.iconns-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.iconn {
+    position: absolute;
+    opacity: 0.7;
+    width: 50px;
+    height: 50px;
+    animation: float 2s infinite;
+    color: hsl(189, 100%, 51%);
+    /* background-color: #ffffff; */
+    /* border-radius: 5px; */
+    padding: 10px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
+.iconn.heart {
+    top: 55%;
+    left: 40%;
+}
+
+.iconn.brain {
+    top: 14%;
+    left: 70%;
+}
+
+.iconn.pulse {
+    top: 16%;
+    left: 5%;
+}
+
+.iconn.thermometer {
+    top: 90%;
+    left: 70%;
+}
+
+.iconn.plus {
+    top: 85%;
+    left: 90%;
+}
+
+.iconn.stethoscope {
+    top: 70%;
+    left: 4%;
+}
+.iconn.pill{
+    top: 10%;
+    left:90%;
+}
+.iconn.syringe{
+    top: 10%;
+    left:30%;
+}
+.iconn.ambulance{
+    top: 87%;
+    left:50%;
+}
+.iconn.heartPulse{
+    top: 10%;
+    left:50%;
+}
+.animated-image{
+    width: 400px;
+    animation: float 2s infinite;
+}
+.CenterDiv{
+    background: linear-gradient(135deg, #dcedf8, #eaf8fc);;
+    display:flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    flex-direction: column;
+    width: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* opacity: 0.8; */
+    margin-bottom: 100px;
+}
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
