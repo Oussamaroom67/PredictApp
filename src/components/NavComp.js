@@ -2,15 +2,18 @@ import * as React from 'react';
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { extendTheme} from '@mui/material/styles';
+//icons
 import HistoryIcon from '@mui/icons-material/History';
 import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
 import LogoutIcon from '@mui/icons-material/Logout';
+//others
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { PageContainer } from '@toolpad/core/PageContainer';
 import '../styles/NavCompStyle.css'
 import Predict from './Predict';
 
+//gestion routes
 function renderPageContent(pathname) {
     if (pathname === '/Predict') {
         return <Predict/>; 
@@ -66,7 +69,7 @@ export default function NavComp(props){
         return 20; 
     }, [isXs, isSm, isMd, isLg]);    
 
-    
+    //navigation sidebar
     const NAVIGATION = [
         {
             segment: 'Predict',

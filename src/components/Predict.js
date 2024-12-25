@@ -16,7 +16,8 @@ import { useTheme } from '@mui/material/styles';
 import { Activity, Brain, Heart, Thermometer, Plus, Stethoscope,Pill,Syringe,Ambulance,HeartPulse } from "lucide-react";
 // style
 import "../styles/Predict.css"; 
-//hocks
+//component
+import CardDisease from "./CardDisease";
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
@@ -37,14 +38,29 @@ export default function Predict() {
     }, [isXs, isSm, isMd, isLg]);     
     // states
     const [loading, setLoading] = React.useState(false);
+    const [Showcard , setShowCard] = React.useState(false);
     // handlers
     const handleClick = () => {
         setLoading(true);
-        setTimeout(() => setLoading(false), 8000); 
-
+        setTimeout(() => {
+            setLoading(false);
+            setShowCard(true);
+        }, 8000); 
     };    
     return (
         <>  
+            {/* CardDisease */}
+            <CardDisease
+                style={{
+                    position: "fixed",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    zIndex: 1000,
+                    visibility: Showcard ? "visible" : "hidden",
+                }}
+            />        
+            {/* Loading */}
             <div
                 style={{
                 position: "fixed",
@@ -72,13 +88,14 @@ export default function Predict() {
                     position: "relative", 
                     opacity: loading ? 0.1 : 1
                 }}
-            >        
+            >      
+
             {/* accueil */}
             <div style={{ paddingLeft: "20px" }}>
-                <Typography variant="h4" sx={{ textAlign: "start", margin: "0", fontWeight: "700",color:'#1565c0',zIndex:'2',position: 'relative'}}>
+                <Typography variant="h5" sx={{ textAlign: "start", margin: "0", fontWeight: "700",color:'#1565c0',zIndex:'2',position: 'relative'}}>
                 Good Morning, Omaima!
                 </Typography>
-                <Typography sx={{ textAlign: "start", margin: "0", fontSize: "16px", color: "gray",zIndex:'2',position: 'relative' }}>
+                <Typography sx={{ textAlign: "start", margin: "0", fontSize: "14px", color: "gray",zIndex:'2',position: 'relative' }}>
                 Ready to take control of your health today?
                 </Typography>
             </div>
@@ -159,7 +176,7 @@ export default function Predict() {
                 </div>
             </div>
 
-            {/* icons */}
+            {/* icons background */}
             <div className="iconns-container">
                 <Activity className="iconn heart" />
                 <Brain className="iconn brain" />
