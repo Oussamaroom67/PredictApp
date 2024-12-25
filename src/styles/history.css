@@ -1,0 +1,235 @@
+/* ==============================
+   Global Reset
+   ============================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==============================
+   Root Variables
+   ============================== */
+:root {
+    /* Theme Colors */
+    --background: 195 100% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary and Secondary Colors */
+    --primary: 189 100% 42%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 189 60% 95%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* Muted Colors */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* Accent and Destructive Colors */
+    --accent: 189 95% 42%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border and Input Styles */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 189 100% 42%;
+
+    /* Other Variables */
+    --radius: 1rem;
+    --sidebar-width: 64px;
+    --sidebar-width-collapsed: 64px;
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+}
+
+/* ==============================
+   Components
+   ============================== */
+
+/* Header and Navigation Bar */
+.history{
+    padding: 30px 70px;
+    background-color: hsl(var(--background));
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.head{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.title{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+}
+
+.icon{
+    color: hsl(var(--primary));
+    background-color: hsl(var(--primary)/0.1);
+    padding: 9px;
+    border-radius: 50%;
+    width: 47px;
+    height: 47px;
+}
+
+/* Control Buttons */
+.control{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    width: 15%;
+}
+
+.control .MuiToggleButton-root {
+    background-color: white; 
+    border: 2px solid hsl(var(--muted)) !important; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 12px;
+}
+
+.control .MuiToggleButton-root.Mui-selected {
+    background-color: hsl(var(--primary) / 0.1);
+}
+
+.control .MuiToggleButton-root:hover,
+.control .MuiToggleButton-root.Mui-selected:hover {
+    background-color: hsl(var(--primary)); 
+}
+
+/* Input and Search Bar */
+.css-quhxjy-MuiInputBase-root-MuiOutlinedInput-root {
+    border-radius: 20px; 
+    background-color: hsl(var(--primary) / 0.1); 
+    width: 300px;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+/* ===============content part=========== */
+.content{
+    padding: 20px;
+    border-radius: 4px;
+    background-color: hsl(var(--card));
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    height: 80% !important;
+    
+}
+
+/* Menu and Buttons */
+.menu{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu .MuiButtonGroup-root{
+    all: unset !important;
+}
+
+.menu .MuiButton-root:first-child{ 
+    background-color:  hsl(var(--primary) / 0.1) !important;
+    border: 1px solid rgb(184, 184, 184) !important;
+    color: black !important;
+    height: 50px !important;
+    text-transform: capitalize !important;
+    border-radius: 20px 0 0 20px !important; 
+    z-index: 4000 !important;
+}
+
+.menu .MuiButton-root:nth-child(2){ 
+    background-color:  hsl(var(--primary) / 0.1) !important;
+    border: 1px solid rgb(184, 184, 184) !important;
+    color: black !important;
+    height: 50px !important;
+    text-transform: capitalize !important;
+    border-radius: 0 20px 20px 0 !important; 
+    z-index: 4000 !important;
+}
+
+.menu .MuiButton-root:hover{
+    background-color: hsl(var(--primary)) !important;
+    border-color: transparent !important;
+}
+
+/* List and Menu Items */
+.menu .MuiList-root{
+    background-color: white;
+}
+
+.menu .MuiButtonBase-root{
+    background-color: white !important;
+    border-radius: 12px !important;
+    padding: 9px !important;
+}
+
+.menu .MuiButtonBase-root:hover{
+    background-color: hsl(var(--primary)) !important;
+}
+
+.menu .MuiList-root{
+    margin-top: 6px !important;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    border-radius: 8px !important;
+    padding: 4px !important;
+}
+/* ================
+    table 
+=================== */
+
+.table{
+    width: 100%;
+    border-radius: 12px;
+    background-color: white;
+    border:1px solid hsl(var(--border));
+}
+
+.table tr {
+    display: flex; 
+    justify-content: space-between;  
+    border-top: 1px solid hsl(var(--border));  
+    padding: 12px; 
+    align-items: center;  
+    width: 100%; 
+}
+.table th tr{
+    border:none !important;
+}
+.table td,
+.table th {
+    flex: 1;  
+    padding: 0 8px; 
+}
+
+.table th {
+    padding-left: 8px;  
+}
+
+.table th:last-child {
+    padding-right: 8px;  
+}
+
+tr:hover{
+    background-color:rgb(214, 213, 213);
+}
+/* ==== */
