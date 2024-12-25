@@ -1,5 +1,5 @@
 /* ==============================
-   Global Reset
+    Global Reset
    ============================== */
    * {
     margin: 0;
@@ -8,7 +8,7 @@
 }
 
 /* ==============================
-   Root Variables
+    Root Variables
    ============================== */
 :root {
     /* Theme Colors */
@@ -49,13 +49,13 @@
 }
 
 /* ==============================
-   Components
+    Components
    ============================== */
 
 /* Header and Navigation Bar */
 .history{
     padding: 30px 70px;
-    background-color: hsl(var(--background));
+    
 }
 
 .nav-bar{

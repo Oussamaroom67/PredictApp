@@ -12,6 +12,7 @@ import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { PageContainer } from '@toolpad/core/PageContainer';
 import '../styles/NavCompStyle.css'
 import Predict from './Predict';
+import HistoryPage from './HistoryPage';
 
 //gestion routes
 function renderPageContent(pathname) {
@@ -19,7 +20,7 @@ function renderPageContent(pathname) {
         return <Predict/>; 
     }
     if (pathname === '/History') {
-        return <div>hy from history</div>;
+        return <HistoryPage/>;
     }
     return <div>Page non trouvée.</div>;
 }

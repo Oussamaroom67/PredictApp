@@ -1,13 +1,13 @@
 /* ============================== 
-   Importations de Material-UI 
+    Importations de Material-UI 
    ============================== */
-   import Container from '@mui/material/Container';   
-   import Paper from '@mui/material/Paper';  
-   import Grid from '@mui/material/Grid';  
-   import ToggleButton from '@mui/material/ToggleButton';  
-   import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';  
-   import TextField from '@mui/material/TextField';
-   import Button from '@mui/material/Button';
+    import Container from '@mui/material/Container';   
+    import Paper from '@mui/material/Paper';  
+    import Grid from '@mui/material/Grid';  
+    import ToggleButton from '@mui/material/ToggleButton';  
+    import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';  
+    import TextField from '@mui/material/TextField';
+    import Button from '@mui/material/Button';
     import ButtonGroup from '@mui/material/ButtonGroup';
     import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
     import ClickAwayListener from '@mui/material/ClickAwayListener';
@@ -67,7 +67,7 @@ export default function HistoryPage(){
     }
     return (
         
-        < div className='history' style={{width:"90%",height:"90vh"}}>
+        < div className='history' style={{width:"90%"}}>
             <Container  maxWidth="xl">
                 <Grid container spacing={8}>
                         <Grid item xs={12} className='nav-bar'>
