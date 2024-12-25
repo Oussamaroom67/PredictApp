@@ -72,7 +72,7 @@
     animation: float 2s infinite;
 }
 .CenterDiv{
-    background: linear-gradient(135deg, #dcedf8, #eaf8fc);;
+    background: linear-gradient(135deg, #bad4e7, #eaf8fc);;
     display:flex;
     gap: 30px;
     justify-content: center;
@@ -83,7 +83,7 @@
     width: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* opacity: 0.8; */
-    margin-bottom: 100px;
+    margin-bottom: 70px;
 }
 @keyframes float {
     0% {

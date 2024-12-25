@@ -1,8 +1,7 @@
-ul.MuiList-root > li:last-child {
-    margin-top: 400px !important;
-}
-.css-8dyk8f-MuiContainer-root{
-    margin: 0 !important;
+@media (min-width: 800px) {
+    ul.MuiList-root > li:last-child {
+        margin-top: 400px !important;
+    }
 }
 @media (min-width: 1200px) {
     .css-8dyk8f-MuiContainer-root {
@@ -10,5 +9,11 @@ ul.MuiList-root > li:last-child {
     }
 }
 .css-8dyk8f-MuiContainer-root{
+    margin: 0 !important;
+}
+.css-8dyk8f-MuiContainer-root{
     background-color: rgba(225, 238, 236, 0.603);
+}
+.css-f84ov1-MuiTypography-root,.css-ijwub5-MuiTypography-root{
+    display: none;
 }

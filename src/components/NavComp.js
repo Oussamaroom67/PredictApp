@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useMediaQuery } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { extendTheme} from '@mui/material/styles';
 import HistoryIcon from '@mui/icons-material/History';
 import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
@@ -9,23 +11,6 @@ import { PageContainer } from '@toolpad/core/PageContainer';
 import '../styles/NavCompStyle.css'
 import Predict from './Predict';
 
-const NAVIGATION = [
-    {
-        segment: 'Predict',
-        title: '',
-        icon: <MonitorHeartIcon />,
-    },
-    {
-        segment: 'History',
-        title: '',
-        icon: <HistoryIcon/>,
-    },
-    {
-        segment: 'logout',
-        title: '',
-        icon: <LogoutIcon />,
-    },
-];
 function renderPageContent(pathname) {
     if (pathname === '/Predict') {
         return <Predict/>; 
@@ -65,9 +50,40 @@ function useDemoRouter(initialPath) {
 
 export default function NavComp(props){
     const { window } = props;
-
     const router = useDemoRouter('/Predict');
+    // gestion responsive
+    const theme = useTheme(); 
+    const isXs = useMediaQuery(theme.breakpoints.down('sm'));
+    const isSm = useMediaQuery(theme.breakpoints.up('sm') && theme.breakpoints.down('md'));
+    const isMd = useMediaQuery(theme.breakpoints.up('md') && theme.breakpoints.down('lg'));
+    const isLg = useMediaQuery(theme.breakpoints.up('lg'));
 
+    const sidebarWidth = React.useMemo(() => {
+        if (isXs) return 300; 
+        if (isSm) return 66; 
+        if (isMd) return 66; 
+        if (isLg) return 66; 
+        return 20; 
+    }, [isXs, isSm, isMd, isLg]);    
+
+    
+    const NAVIGATION = [
+        {
+            segment: 'Predict',
+            title: isXs ? 'Predict': '',
+            icon: <MonitorHeartIcon />,
+        },
+        {
+            segment: 'History',
+            title: isXs ? 'History':'',
+            icon: <HistoryIcon/>,
+        },
+        {
+            segment: 'logout',
+            title: isXs ?'Logout':'',
+            icon: <LogoutIcon />,
+        },
+    ];
     const demoWindow = window ? window() : undefined;
     return(
         <AppProvider
@@ -77,7 +93,7 @@ export default function NavComp(props){
             window={demoWindow}
         >
             <DashboardLayout 
-                sidebarExpandedWidth = {66}
+                sidebarExpandedWidth = {sidebarWidth}
                 defaultSidebarCollapsed={true}
                 disableCollapsibleSidebar={true}
             >
