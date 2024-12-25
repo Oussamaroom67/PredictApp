@@ -1,11 +1,7 @@
 import Container from '@mui/material/Container';
 import React,{useEffect,useState} from 'react';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 import EmergencyIcon from '@mui/icons-material/Emergency';
 import '../styles/landing.css';
