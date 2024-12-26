@@ -128,7 +128,7 @@
 /* ===============content part=========== */
 .content{
     padding: 20px;
-    border-radius: 4px;
+    border-radius: 16px;
     background-color: hsl(var(--card));
     display: flex;
     flex-direction: column;

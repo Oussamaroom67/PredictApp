@@ -23,7 +23,7 @@
    /* ============================== 
       Importations React 
       ============================== */
-   import { useState,useRef } from 'react';  
+   import { useState,useRef,useReducer } from 'react';  
    /* ============================== 
       Importations context 
       ============================== */
@@ -34,8 +34,9 @@
    import '../styles/history.css';  
    import CardHistory from './CardHistory';
    import PaginationComp from './PaginationComp';
+   import { reducerHistory } from '../reducers/reducerHistory';
    const options =['descending sort', 'ascending sort'];
-   let data = [
+   let dataHistory = [
     {
         date: "01/01/2022",
         symptoms: ["Headache", "Fever", "Cough"],
@@ -74,13 +75,14 @@
 ];
 
 export default function HistoryPage(){
+    const [data,dispatchHistory] =useReducer(reducerHistory,dataHistory);
     const [btnActive, setActive] = useState('list');
     const [open, setOpen] = useState(false);
     const anchorRef = useRef(null);
     const [selectedIndex, setSelectedIndex] = useState(1);
-        const [currentPage, setCurrentPage] = useState(2); // Page active
-        const itemsPerPage = 3; // Nombre d'éléments par page
-    
+    const [currentPage, setCurrentPage] = useState(1); // Page active
+    const itemsPerPage = 3; // Nombre d'éléments par page
+    const [layout,setLayout] = useState('list');
         // Calcul des éléments à afficher pour la page active
         const startIndex = (currentPage - 1) * itemsPerPage;
         let currentData = data.length > 0 ? data.slice(startIndex, startIndex + itemsPerPage) : [];
@@ -89,16 +91,34 @@ export default function HistoryPage(){
         };
     const handleClick = () => {
         console.info(`You clicked ${options[selectedIndex]}`);
+        
       };
     
       const handleMenuItemClick = (event, index) => {
         setSelectedIndex(index);
         setOpen(false);
         //hna andiro sortings;
+        if(options[selectedIndex]==='descending sort'){
+            dispatchHistory({
+                type:'descending',
+                payload:{
+                    data:dataHistory
+                }
+            })
+        }
+        if(options[selectedIndex]==='ascending sort'){
+            dispatchHistory({
+                type:'ascending',
+                payload:{
+                    data:dataHistory
+                }
+            })
+        }
       };
     
       const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
+    
       };
     
       const handleClose = (event) => {
@@ -114,11 +134,18 @@ export default function HistoryPage(){
         if (newAlignment !== null) {
             setActive(newAlignment);
         }
+        if(layout==='grid') {
+            setLayout('list');
+        }else {
+            setLayout('grid');
+        }
+        
     }
     return (
         <historyData.Provider value={{
             data:data,
-            currentData:currentData
+            currentData:currentData,
+            
         }}>
         < div className='history' style={{width:"95%",height:"95%"}}>
             <Container  maxWidth="xl">
@@ -152,15 +179,32 @@ export default function HistoryPage(){
                                 <div className="menu">
                                     <div className="search">
                                         <Search style={{height:"20px",width:"20px",color:"hsl(215.4 16.3% 46.9%)"}}/>
-                                        <TextField id="outlined-basic" label="Search predictions.." variant="outlined" sx={{
-                                                    "& .MuiOutlinedInput-root": {
-                                                    borderRadius: "40px", 
-                                                    },
-                                                    "& .MuiInputLabel-root.Mui-focused": {
-                                                        color: "hsl(215.4 16.3% 46.9%)", 
-                                                        borderColor: "hsl(215.4 16.3% 46.9%)", 
-                                                      },
-                                        }} />
+                                        <TextField
+                                            id="outlined-basic"
+                                            label="Search predictions.."
+                                            variant="outlined"
+                                            sx={{
+                                                "& .MuiOutlinedInput-root": {
+                                                borderRadius: "40px",
+                                                },
+                                                "& .MuiInputLabel-root.Mui-focused": {
+                                                color: "hsl(215.4 16.3% 46.9%)",
+                                                },
+                                                "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                                                borderColor: "hsl(215.4 16.3% 46.9%)",
+                                                },
+                                            }}
+                                            onChange={(event) => {
+                                                dispatchHistory({
+                                                    type:'search',
+                                                    payload:{
+                                                        keyword:event.target.value,
+                                                        data:dataHistory
+                                                    }
+                                                });
+                                            }}
+                                        />
+
                                     </div>
                                           <ButtonGroup
                                                 variant="contained"
@@ -217,7 +261,7 @@ export default function HistoryPage(){
                                             </Popper>
                                 </div>
                                     {/* table here */}
-                                    <CardHistory/>
+                                    <CardHistory layout={layout}/>
 
                                 </div>
                                 
