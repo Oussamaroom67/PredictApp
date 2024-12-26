@@ -3,10 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-oauth/google": "^0.12.1",
     "cra-template": "1.2.0",
+    "dotenv": "^16.4.7",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-scripts": "5.0.1"
+    "react-router-dom": "^7.1.1",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^11.0.2",
+    "web-vitals": "^4.2.4"
   },
   "scripts": {
     "start": "react-scripts start",
