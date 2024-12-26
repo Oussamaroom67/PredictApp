@@ -54,8 +54,10 @@
 
 /* Header and Navigation Bar */
 .history{
-    padding: 30px 70px;
-    
+    padding: 30px;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .nav-bar{
@@ -111,10 +113,11 @@
 }
 
 /* Input and Search Bar */
-.css-quhxjy-MuiInputBase-root-MuiOutlinedInput-root {
+.search .MuiOutlinedInput-root {
     border-radius: 20px; 
-    background-color: hsl(var(--primary) / 0.1); 
+    background-color: hsl(var(--primary) / 0.1) !important; 
     width: 300px;
+    height: 50px !important;
 }
 
 .search{
@@ -130,7 +133,7 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
-    height: 80% !important;
+    height: 100% !important;
     
 }
 
@@ -193,6 +196,60 @@
     border-radius: 8px !important;
     padding: 4px !important;
 }
+/* Bootstrap Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+.MuiBox-root{
+
+}
+.main-root{
+    
+}
+/* Écrans très petits (Téléphones) */
+@media (max-width: 576px) {
+    .history{
+        min-height: 91vh !important;
+    }
+}
+
+
+/* Écrans plus petits (Tablettes portrait) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .history{
+        min-height: 91vh !important;
+    }
+}
+
+/* Écrans moyens (Ordinateurs portables) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-root {
+            height: 73vh;
+    }
+    .history{
+        min-height: 94vh !important;
+    }
+}
+
+/* Écrans grands (Ordinateurs de bureau) */
+@media (min-width: 1025px) {
+    .main-root {
+            height: 80vh;
+    }
+    .history{
+        height: 91vh !important;
+    }
+}
+
+
+
 /* ================
     table 
 =================== */
@@ -212,13 +269,15 @@
     align-items: center;  
     width: 100%; 
 }
-.table th tr{
-    border:none !important;
+thead tr:first-child{
+    border: none !important;
 }
 .table td,
 .table th {
     flex: 1;  
     padding: 0 8px; 
+    text-align: center !important; 
+    
 }
 
 .table th {
@@ -233,3 +292,6 @@ tr:hover{
     background-color:rgb(214, 213, 213);
 }
 /* ==== */
+.css-1c54o3z-MuiGrid-root>.MuiGrid-item{
+    padding-top: 35px;
+}

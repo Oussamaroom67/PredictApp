@@ -25,18 +25,68 @@
       ============================== */
    import { useState,useRef } from 'react';  
    /* ============================== 
+      Importations context 
+      ============================== */
+    import { historyData } from '../contexts/historyDataContext';
+   /* ============================== 
       Styles CSS personnalisés 
       ============================== */
    import '../styles/history.css';  
    import CardHistory from './CardHistory';
-   
+   import PaginationComp from './PaginationComp';
    const options =['descending sort', 'ascending sort'];
+   let data = [
+    {
+        date: "01/01/2022",
+        symptoms: ["Headache", "Fever", "Cough"],
+        disease: "Common Cold",
+        description: "Common cold caused by viruses",
+        confidence: 60, // percentage
+    },
+    {
+        date: "15/03/2022",
+        symptoms: ["Fatigue", "Nausea", "Vomiting"],
+        disease: "Food Poisoning",
+        description: "Illness caused by contaminated food or water",
+        confidence: 85,
+    },
+    {
+        date: "20/07/2022",
+        symptoms: ["Chest Pain", "Shortness of Breath"],
+        disease: "Heart Disease",
+        description: "Symptoms may indicate a cardiovascular issue",
+        confidence: 90,
+    },
+    {
+        date: "10/11/2022",
+        symptoms: ["Sore Throat", "Sneezing", "Runny Nose"],
+        disease: "Flu",
+        description: "Seasonal influenza caused by viral infection",
+        confidence: 70,
+    },
+    {
+        date: "05/12/2022",
+        symptoms: ["Fever", "Chills", "Sweating"],
+        disease: "Malaria",
+        description: "Parasitic disease spread by infected mosquitoes",
+        confidence: 75,
+    },
+];
 
 export default function HistoryPage(){
     const [btnActive, setActive] = useState('list');
     const [open, setOpen] = useState(false);
     const anchorRef = useRef(null);
     const [selectedIndex, setSelectedIndex] = useState(1);
+        const [currentPage, setCurrentPage] = useState(2); // Page active
+        const itemsPerPage = 3; // Nombre d'éléments par page
+    
+        // Calcul des éléments à afficher pour la page active
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        let currentData = data.length > 0 ? data.slice(startIndex, startIndex + itemsPerPage) : [];
+        const handlePageChange = (event, value) => {
+            setCurrentPage(value);
+        };
     const handleClick = () => {
         console.info(`You clicked ${options[selectedIndex]}`);
       };
@@ -66,10 +116,13 @@ export default function HistoryPage(){
         }
     }
     return (
-        
-        < div className='history' style={{width:"90%"}}>
+        <historyData.Provider value={{
+            data:data,
+            currentData:currentData
+        }}>
+        < div className='history' style={{width:"95%",height:"95%"}}>
             <Container  maxWidth="xl">
-                <Grid container spacing={8}>
+                <Grid container spacing={8} className='main-root'>
                         <Grid item xs={12} className='nav-bar'>
                             <div className="head">
                                 <Stethoscope   className='icon' />
@@ -101,7 +154,7 @@ export default function HistoryPage(){
                                         <Search style={{height:"20px",width:"20px",color:"hsl(215.4 16.3% 46.9%)"}}/>
                                         <TextField id="outlined-basic" label="Search predictions.." variant="outlined" sx={{
                                                     "& .MuiOutlinedInput-root": {
-                                                    borderRadius: "20px", 
+                                                    borderRadius: "40px", 
                                                     },
                                                     "& .MuiInputLabel-root.Mui-focused": {
                                                         color: "hsl(215.4 16.3% 46.9%)", 
@@ -172,6 +225,8 @@ export default function HistoryPage(){
                         </Grid>
                 </Grid>
             </Container>
+            <PaginationComp currentPage={currentPage} setCurrentPage={setCurrentPage} handlePageChange ={handlePageChange} itemsPerPage={itemsPerPage}/>
         </div>
+        </historyData.Provider>
     )
 }
