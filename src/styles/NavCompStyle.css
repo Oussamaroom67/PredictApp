@@ -1,6 +1,6 @@
-@media (min-width: 800px) {
-    ul.MuiList-root > li:last-child {
-        margin-top: 400px !important;
+@media (min-width: 599px) {
+    nav ul.MuiList-root > li:last-child {
+        margin-top: 530px !important;
     }
 }
 @media (min-width: 1200px) {

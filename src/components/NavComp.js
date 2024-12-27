@@ -13,7 +13,6 @@ import { PageContainer } from '@toolpad/core/PageContainer';
 import '../styles/NavCompStyle.css'
 import Predict from './Predict';
 import HistoryPage from './HistoryPage';
-
 //gestion routes
 function renderPageContent(pathname) {
     if (pathname === '/Predict') {
@@ -95,6 +94,11 @@ export default function NavComp(props){
             router={router}
             theme={demoTheme}
             window={demoWindow}
+            branding={{
+                logo: <img src="/logo.png" alt="My Logo" style={{ height: '200px',marginRight:'10px' }} />,
+                title: 'Medino',
+                homeUrl: '/',
+            }}
         >
             <DashboardLayout 
                 sidebarExpandedWidth = {sidebarWidth}

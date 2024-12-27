@@ -9,6 +9,11 @@ import { Typography } from "@mui/material";
 import Button from '@mui/material/Button';
 import { Player } from "@lottiefiles/react-lottie-player";
 import animationData from "../AnimationHeart.json";
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+
+
 //size
 import { useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
@@ -18,6 +23,8 @@ import { Activity, Brain, Heart, Thermometer, Plus, Stethoscope,Pill,Syringe,Amb
 import "../styles/Predict.css"; 
 //component
 import CardDisease from "./CardDisease";
+//data
+import symptoms from '../data/Symtoms.json';
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
@@ -32,13 +39,21 @@ export default function Predict() {
 
     const cardWidth = React.useMemo(() => {
         if (isXs | isSm) return '90%'; 
+        if (isMd) return '67%';
+        if (isLg) return '40%'; 
+        return '50%'; 
+    }, [isXs, isSm, isMd, isLg]);     
+    const CardDiseaseWidth = React.useMemo(() => {
+        if (isXs | isSm) return '90%'; 
         if (isMd) return '70%';
         if (isLg) return '50%'; 
         return '50%'; 
-    }, [isXs, isSm, isMd, isLg]);     
+    }, [isXs, isSm, isMd, isLg]);  
     // states
     const [loading, setLoading] = React.useState(false);
     const [Showcard , setShowCard] = React.useState(false);
+    const [selectedOptions, setSelectedOptions] = React.useState([]);
+    const [open, setOpen] = React.useState(false);
     // handlers
     const handleClick = () => {
         setLoading(true);
@@ -47,8 +62,40 @@ export default function Predict() {
             setShowCard(true);
         }, 8000); 
     };    
+    const handleAroundClick = ()=>{
+        if(Showcard){
+            setShowCard(false);
+        }
+    };
+    const handleChange= (event, value, reason)=>{
+        if(value.length == 6){
+            console.log('Triggering Snackbar');
+            setOpen(true);
+        }
+        setSelectedOptions(value);
+    }
+    
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+    
+        setOpen(false);
+    };
+    const action = (
+        <React.Fragment>
+            <IconButton
+                size="small"
+                aria-label="close"
+                color="inherit"
+                onClick={handleClose}
+            >
+                <CloseIcon fontSize="small" />
+            </IconButton>
+        </React.Fragment>
+    );
     return (
-        <>  
+        <>             
             {/* CardDisease */}
             <CardDisease
                 style={{
@@ -58,6 +105,7 @@ export default function Predict() {
                     transform: "translate(-50%, -50%)",
                     zIndex: 1000,
                     visibility: Showcard ? "visible" : "hidden",
+                    width:CardDiseaseWidth
                 }}
             />        
             {/* Loading */}
@@ -84,12 +132,21 @@ export default function Predict() {
                     height: "100%",
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "space-around",
+                    justifyContent: "center",
+                    gap: isXs ?'5%':'10%',
                     position: "relative", 
-                    opacity: loading ? 0.1 : 1
+                    opacity: loading|Showcard ? 0.1 : 1
                 }}
+                onClick={handleAroundClick}
             >      
-
+            {/* Snackbar */}
+            <Snackbar
+                open={open}
+                autoHideDuration={6000}
+                onClose={handleClose}
+                message="Do not exceed 6 symptoms!"
+                action={action}
+            /> 
             {/* accueil */}
             <div style={{ paddingLeft: "20px" }}>
                 <Typography variant="h5" sx={{ textAlign: "start", margin: "0", fontWeight: "700",color:'#1565c0',zIndex:'2',position: 'relative'}}>
@@ -100,7 +157,7 @@ export default function Predict() {
                 </Typography>
             </div>
 
-            <div  style={{ display: "flex", position: "relative" ,gap:"50px",justifyContent:'center',zIndex:'2',alignItems:'center'}}>
+            <div  style={{ display: "flex", position: "relative" ,gap:"10%",justifyContent:'center',zIndex:'2',alignItems:'center'}}>
                 {/* image */}
                 <img
                 src="/doctor.png"
@@ -115,17 +172,25 @@ export default function Predict() {
                     <Autocomplete
                         multiple
                         id="checkboxes-tags-demo"
-                        options={top100Films}
+                        options={symptoms}
                         disableCloseOnSelect
                         getOptionLabel={(option) => option.title}
+                        value={selectedOptions}
+                        onChange={handleChange}
                         renderOption={(props, option, { selected }) => {
                             const { key, ...optionProps } = props;
+                            const isDisabled = selectedOptions.length >= 6 && !selected;
                             return (
-                            <li key={key} {...optionProps}>
+                            <li key={key} {...optionProps} 
+                            style={{
+                                opacity: isDisabled ? 0.5 : 1,
+                                pointerEvents: isDisabled ? 'none' : 'auto',
+                            }}>
                                 <Checkbox
                                 icon={icon}
                                 checkedIcon={checkedIcon}
                                 style={{ marginRight: 8 }}
+                                disabled={isDisabled}
                                 checked={selected}
                                 />
                                 {option.title}
@@ -140,14 +205,15 @@ export default function Predict() {
                                 sx={{
                                     zIndex: 2,
                                     borderRadius: '12px',
+                                    borderColor:'black !important',
                                     '& .MuiOutlinedInput-root': {
-                                        borderRadius: '12px', // Pour arrondir les coins
+                                        borderRadius: '12px', 
                                         '&:hover fieldset': {
                                             borderRadius: '12px',
-                                            borderColor:'#bbdefb' // Lors du hover
+                                            borderColor:'#3949ab' 
                                         },
                                         '&.Mui-focused fieldset': {
-                                            borderRadius: '12px', // Lors de la sélection
+                                            borderRadius: '12px', 
                                         },
                                     },
                                 }}
@@ -160,10 +226,10 @@ export default function Predict() {
                     sx={{
                         width: {
                             xs: '90%',  
-                            sm: '80%',  
-                            md: '50%',  
-                            lg: '30%',  
-                            xl: '20%'   
+                            sm: '90%',  
+                            md: '60%',  
+                            lg: '50%',  
+                            xl: '30%'   
                         },
                         background: 'linear-gradient(to right, #2196f3, #9c27b0)',
                         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
@@ -194,53 +260,4 @@ export default function Predict() {
     );
 }
 
-const top100Films = [
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Godfather', year: 1972 },
-    { title: 'The Godfather: Part II', year: 1974 },
-    { title: 'The Dark Knight', year: 2008 },
-    { title: '12 Angry Men', year: 1957 },
-    { title: "Schindler's List", year: 1993 },
-    { title: 'Pulp Fiction', year: 1994 },
-    {
-        title: 'The Lord of the Rings: The Return of the King',
-        year: 2003,
-    },
-    { title: 'The Good, the Bad and the Ugly', year: 1966 },
-    { title: 'Fight Club', year: 1999 },
-    {
-        title: 'The Lord of the Rings: The Fellowship of the Ring',
-        year: 2001,
-    },
-    {
-      title: 'Star Wars: Episode V - The Empire Strikes Back',
-      year: 1980,
-    },
-    { title: 'Forrest Gump', year: 1994 },
-    { title: 'Inception', year: 2010 },
-    {
-      title: 'The Lord of the Rings: The Two Towers',
-      year: 2002,
-    },
-    { title: "One Flew Over the Cuckoo's Nest", year: 1975 },
-    { title: 'Goodfellas', year: 1990 },
-    { title: 'The Matrix', year: 1999 },
-    { title: 'Seven Samurai', year: 1954 },
-    {
-      title: 'Star Wars: Episode IV - A New Hope',
-      year: 1977,
-    },
-    { title: 'City of God', year: 2002 },
-    { title: 'Se7en', year: 1995 },
-    { title: 'The Silence of the Lambs', year: 1991 },
-    { title: "It's a Wonderful Life", year: 1946 },
-    { title: 'Life Is Beautiful', year: 1997 },
-    { title: 'The Usual Suspects', year: 1995 },
-    { title: 'Léon: The Professional', year: 1994 },
-    { title: 'Spirited Away', year: 2001 },
-    { title: 'Saving Private Ryan', year: 1998 },
-    { title: 'Once Upon a Time in the West', year: 1968 },
-    { title: 'American History X', year: 1998 },
-    { title: 'Interstellar', year: 2014 },
-];
 
