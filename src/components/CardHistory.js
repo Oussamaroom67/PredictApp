@@ -191,7 +191,8 @@ const responsiveList = currentData.map((element, index) => (
                     gap: "20px",
                     justifyContent: "center",
                     display: "flex",
-                    flexWrap: "wrap"
+                    flexWrap: "wrap",
+                    width:"100%"
                 }}
             >
                 {diseaseListCard}
