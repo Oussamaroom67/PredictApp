@@ -157,7 +157,7 @@
     height: 50px !important;
     text-transform: capitalize !important;
     border-radius: 20px 0 0 20px !important; 
-    z-index: 4000 !important;
+    z-index: 2 !important;
 }
 
 .menu .MuiButton-root:nth-child(2){ 
@@ -167,7 +167,7 @@
     height: 50px !important;
     text-transform: capitalize !important;
     border-radius: 0 20px 20px 0 !important; 
-    z-index: 4000 !important;
+    z-index: 2 !important;
 }
 
 .menu .MuiButton-root:hover{
@@ -217,24 +217,132 @@ body {
 @media (max-width: 576px) {
     .history{
         min-height: 91vh !important;
+        padding-left: 0 ;
+        padding-right: 0 !important;
+        width: 100% !important;
     }
+    .menu{
+        flex-direction: column !important; /* Disposition en colonne */
+        
+        justify-content: center !important;
+    }
+    .nav-bar{
+        flex-direction: column !important; /* Disposition en colonne */
+        align-items: flex-start;
+    }
+    .history{
+        min-height: 140vh !important;
+    }
+    .grid-card{
+        width: 90% !important;
+    }
+
+    .css-1c54o3z-MuiGrid-root>.MuiGrid-item{
+        padding: 12px;
+    }
+    .table {
+        display: none; /* Cacher le tableau sur mobile */
+      }
+    .responsive-list {
+        display: block !important;
+      }
+    
+      .responsive-list .item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 8px;
+        margin-bottom: 10px;
+      }
+    
+      .responsive-list .item div {
+        margin-bottom: 6px;
+      }
+    
+      .responsive-list .item .confidence-bar {
+        position: relative;
+        width: 100%;
+        height: 8px;
+        background-color: #e0f7fa;
+        border-radius: 60px;
+        overflow: hidden;
+      }
+    
+      .responsive-list .item .confidence-bar .fill {
+        height: 100%;
+        background-color: #00bcd4;
+        border-radius: 60px;
+      }
+      .nav-bar .MuiToggleButtonGroup-root{
+        margin-left: 30px !important;
+      }
+      .title{
+        align-items: center !important;
+        text-align: center;
+      }
+      .head{
+        flex-direction: column !important;;
+      }
+      .head .icon{
+        height: 67px !important;
+        width: 67px !important;
+      }
 }
+    
 
 
 /* Écrans plus petits (Tablettes portrait) */
 @media (min-width: 577px) and (max-width: 768px) {
     .history{
         min-height: 91vh !important;
+        padding-left: 0 ;
+        padding-right: 0 !important;
+        width: 100% !important;
+    }
+    .menu{
+        flex-direction: column !important; /* Disposition en colonne */
+        
+        justify-content: center !important;
+    }
+    .nav-bar{
+        flex-direction: column !important; /* Disposition en colonne */
+        align-items: flex-start;
+    }
+    .history{
+        min-height: 200vh !important;
+    }
+    .grid-card{
+        width: 90% !important;
+    }
+    .css-1c54o3z-MuiGrid-root>.MuiGrid-item{
+        padding: 12px;
     }
 }
 
 /* Écrans moyens (Ordinateurs portables) */
+
 @media (min-width: 769px) and (max-width: 1024px) {
     .main-root {
-            height: 73vh;
+            height: 86vh !important;
     }
     .history{
-        min-height: 94vh !important;
+        min-height: 150vh !important;
+    }
+    .grid-card{
+        width: 45% !important;
+    }
+    .menu .MuiButton-root:first-child{ 
+        
+        font-size: 13px;
+    }
+    .search .MuiOutlinedInput-root{
+        width: 200px;
+    }
+    
+    .menu .MuiButton-root:nth-child(2){ 
+        width: 10px;
+    }
+    .grid-card .symptoms{
+        gap:10px !important;
     }
 }
 
@@ -244,7 +352,7 @@ body {
             height: 80vh;
     }
     .history{
-        height: 91vh !important;
+        height: 105vh !important;
     }
 }
 

@@ -39,7 +39,7 @@
    let dataHistory = [
     {
         date: "01/01/2022",
-        symptoms: ["Headache", "Fever", "Cough"],
+        symptoms: ["Headache", "Fever", "Cough",'jhjjjjjjj','ffffffffffffffffffffff','jhjfffffffffjjjjjj'],
         disease: "Common Cold",
         description: "Common cold caused by viruses",
         confidence: 60, // percentage
@@ -150,7 +150,13 @@ export default function HistoryPage(){
         < div className='history' style={{width:"95%",height:"95%"}}>
             <Container  maxWidth="xl">
                 <Grid container spacing={8} className='main-root'>
-                        <Grid item xs={12} className='nav-bar'>
+                        <Grid item xs={12} className='nav-bar' sx={{
+                                display: "flex",
+                                flexDirection: { xs: "column", sm: "row" }, // Colonne pour mobile, ligne pour écrans plus larges
+                                alignItems: "center",
+                                justifyContent: { xs: "space-between", sm: "center" },
+                                gap: 2,
+                            }}>
                             <div className="head">
                                 <Stethoscope   className='icon' />
                                 <div className="title">
