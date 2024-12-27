@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 @media (min-width: 599px) {
     nav ul.MuiList-root > li:last-child {
         margin-top: 530px !important;
-=======
-@media (min-width: 800px) {
-    nav ul.MuiList-root > li:last-child {
-        margin-top: 400px !important;
->>>>>>> origin/oussama
     }
 }
 @media (min-width: 1200px) {

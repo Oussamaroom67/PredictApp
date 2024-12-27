@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Style for the Login Page */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(315deg, hsla(216, 21%, 91%, 1) 0%, hsla(186, 68%, 85%, 1) 95%);
+  /* Dégradé de fond */
+  overflow-x: hidden;
+}
+
+.login-container {
+  width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h1 {
+  font-size: 2rem;
+  color: #62a1ba; /* Vert foncé */
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.login-container form div {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.login-container form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #444444;
+}
+
+.login-container form input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.login-container form input:focus {
+  border-color: #4dd0e1;
+  box-shadow: 0 0 5px rgba(77, 208, 225, 0.5);
+}
+
+.login-container button[type='submit'] {
+  background-color: #4dd0e1;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  display: flex; /* Utilisation de Flexbox */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  text-align: center; 
+}
+
+.login-container button[type='submit']:hover {
+  background-color: #26c6da;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-container span {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.login-container span a {
+  color: #4dd0e1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-container span a:hover {
+  text-decoration: underline;
+}
+
+/* Google Login Button */
+.google-login-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #5f6368;
+  border: 1px solid #dadce0;
+  border-radius: 24px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%; /* Adapte la largeur au parent, comme le bouton Login */
+  height: 50px; /* Même hauteur que le bouton Login */
+  box-shadow: 0px 1px 3px rgba(60, 64, 67, 0.3), 0px 1px 2px rgba(60, 64, 67, 0.15);
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.google-login-button:hover {
+  box-shadow: 0px 4px 6px rgba(60, 64, 67, 0.3), 0px 2px 4px rgba(60, 64, 67, 0.15);
+  background-color: #f8f9fa; /* Léger changement de fond au survol */
+}
+
+.google-login-button img {
+  margin-right: 8px; /* Espace entre le logo et le texte */
+  width: 40px; /* Augmenté de 24px à 30px */
+  height: 40px; /* Augmenté de 24px à 30px */
+}
+.google-login-button span {
+  font-family: 'Arial', sans-serif; /* Choix d'une police similaire au bouton Login */
+  color: #242323; /* Blanc, comme le texte du bouton Login */
+  text-transform: capitalize; /* Style du texte en majuscules/minuscules similaires */
+}

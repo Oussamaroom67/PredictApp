@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Style pour la page Signup uniquement */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f8ff;
+}
+
+.signup-container {
+  width: 400px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.signup-container h1 {
+    font-size: 2rem;
+    color: #62a1ba; /* Vert foncé */
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.signup-container form div {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.signup-container form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #444444;
+}
+
+.signup-container form input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.signup-container form input:focus {
+    border-color: #4dd0e1;
+    box-shadow: 0 0 5px rgba(77, 208, 225, 0.5);
+}
+
+.signup-container button[type='submit'] {
+    background-color: #4dd0e1;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    display: flex; /* Utilisation de Flexbox */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    text-align: center; /* Centre le texte */
+}
+
+.signup-container button[type='submit']:hover {
+    background-color: #26c6da;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.signup-container span {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+.signup-container span a {
+    color: #4dd0e1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-container span a:hover {
+  text-decoration: underline;
+}
