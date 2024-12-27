@@ -1,95 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* Général */
-*,
-::before,
-::after {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
+/* Style for the Login Page */
 body {
-  height: 100%;
-  width: 100%;
   font-family: 'Poppins', sans-serif;
-}
-
-body {
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   background: linear-gradient(315deg, hsla(216, 21%, 91%, 1) 0%, hsla(186, 68%, 85%, 1) 95%);
   /* Dégradé de fond */
   overflow-x: hidden;
 }
 
-/* Conteneur principal */
-.container {
-  background-color: white;
-  padding: 40px 30px;
-  border-radius: 15px;
-  width: 70%; /* Largeur par défaut */
-  max-width: 500px; /* Largeur maximale */
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+.login-container {
+  width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
-
-  /* Centrage horizontal */
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
-/* Utilisation de media queries */
-@media screen and (min-width: 600px) {
-  .container {
-    width: 100%; /* Largeur pour les écrans larges */
-  }
-}
-
-/* Titre */
-.container > h1 {
+.login-container h1 {
   font-size: 2rem;
   color: #62a1ba; /* Vert foncé */
   margin-bottom: 40px;
   font-weight: bold;
 }
 
-/* Champs du formulaire */
-label {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #555;
-  text-align: left;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.container input {
-  width: 100%;
-  font-size: 1rem;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  outline: none;
+.login-container form div {
   margin-bottom: 20px;
-  transition: all 0.3s ease-in-out;
+  text-align: left;
 }
 
-.container input:focus {
+.login-container form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #444444;
+}
+
+.login-container form input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.login-container form input:focus {
   border-color: #4dd0e1;
   box-shadow: 0 0 5px rgba(77, 208, 225, 0.5);
 }
 
-.container input::placeholder {
-  font-size: 0.9rem;
-  color: #aaa;
-}
-
-/* Bouton */
-button {
+.login-container button[type='submit'] {
   background-color: #4dd0e1;
   border: none;
   font-size: 1.2rem;
@@ -103,40 +73,32 @@ button {
   display: flex; /* Utilisation de Flexbox */
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement */
-  text-align: center; /* Centre le texte */
+  text-align: center; 
 }
 
-button:hover {
+.login-container button[type='submit']:hover {
   background-color: #26c6da;
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Texte sous le bouton */
-.container span {
+.login-container span {
   font-size: 0.9rem;
   color: #666;
   margin-top: 10px;
 }
 
-.container span a {
+.login-container span a {
   color: #4dd0e1;
   text-decoration: none;
   font-weight: bold;
 }
 
-.container span a:hover {
+.login-container span a:hover {
   text-decoration: underline;
 }
 
-/* Alignement personnalisé */
-.container label,
-.container input,
-button {
-  text-align: left;
-}
-
-/* Bouton Google */
+/* Google Login Button */
 .google-login-button {
   display: flex;
   align-items: center;
@@ -155,17 +117,16 @@ button {
   transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.google-login-button img {
-  margin-right: 8px; /* Espace entre le logo et le texte */
-  width: 40px; /* Augmenté de 24px à 30px */
-  height: 40px; /* Augmenté de 24px à 30px */
-}
-
 .google-login-button:hover {
   box-shadow: 0px 4px 6px rgba(60, 64, 67, 0.3), 0px 2px 4px rgba(60, 64, 67, 0.15);
   background-color: #f8f9fa; /* Léger changement de fond au survol */
 }
 
+.google-login-button img {
+  margin-right: 8px; /* Espace entre le logo et le texte */
+  width: 40px; /* Augmenté de 24px à 30px */
+  height: 40px; /* Augmenté de 24px à 30px */
+}
 .google-login-button span {
   font-family: 'Arial', sans-serif; /* Choix d'une police similaire au bouton Login */
   color: #242323; /* Blanc, comme le texte du bouton Login */

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../styles/LoginSignup.css';
+import '../styles/Login.css'; 
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from './utils';
@@ -54,7 +54,7 @@ function Login(){
 
     }
     return(
-        <div className='container'>
+        <div className='login-container login-page'>
             <h1>Login</h1>
             <form onSubmit={handleLogin}>
                <div>

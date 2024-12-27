@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import '../styles/Signup.css';
+import '../styles/Signup.css'; 
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { handleError, handleSuccess } from './utils';
@@ -53,7 +53,7 @@ function Signup(){
 
     }
     return(
-        <div className='container'>
+        <div className='signup-container'>
             <h1>Signup</h1>
             <form onSubmit={handleSignup}>
                <div>
