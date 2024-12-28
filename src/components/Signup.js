@@ -53,6 +53,7 @@ function Signup(){
 
     }
     return(
+        <div className="signup-container-wrapper">
         <div className='signup-container'>
             <h1>Signup</h1>
             <form onSubmit={handleSignup}>
@@ -94,6 +95,7 @@ function Signup(){
             </form>
             <ToastContainer />
 
+        </div>
         </div>
     )
 }

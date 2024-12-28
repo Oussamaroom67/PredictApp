@@ -7,11 +7,10 @@ import { useState } from 'react';
 import AppRoutes from './components/AppRoutes';
 
 function App() {
-  // const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   return (
     <div className="App">
-      <NavComp/>
-      {/* <AppRoutes isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} /> */}
+      <AppRoutes isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
     </div>
   );
 }

@@ -54,6 +54,7 @@ function Login(){
 
     }
     return(
+        <div className="container-big">
         <div className='login-container login-page'>
             <h1>Login</h1>
             <form onSubmit={handleLogin}>
@@ -97,6 +98,7 @@ function Login(){
             <ToastContainer />
 
         </div>
-    )
+        </div>
+    );
 }
-export default Login
+export default Login;
