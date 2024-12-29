@@ -12,7 +12,7 @@ import animationData from "../AnimationHeart.json";
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
-
+import axios from "axios";
 
 //size
 import { useMediaQuery } from '@mui/material';
@@ -54,13 +54,33 @@ export default function Predict() {
     const [Showcard , setShowCard] = React.useState(false);
     const [selectedOptions, setSelectedOptions] = React.useState([]);
     const [open, setOpen] = React.useState(false);
+    const [userName, setUserName] = React.useState('Unknown');
+    const [userId, setUserId]=React.useState();
+    const [cardContent, setCardContent] = React.useState({});
+    React.useEffect(()=>{
+        setUserId(localStorage.getItem("userId"));
+        setUserName(localStorage.getItem("userName"))
+    })
     // handlers
-    const handleClick = () => {
+    const handleClick = async () => {
         setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
+        try{
+            const symptomes = selectedOptions.map(item => item.title);
+
+            const response = await axios.post('http://localhost:8080/api/predict', {symptomes: symptomes,userId:userId});
+            console.log(response.data);
+            setCardContent(response.data);
             setShowCard(true);
-        }, 8000); 
+        }catch(e){
+            console.error(e);
+        }
+        finally{
+            setLoading(false);
+        }
+        // setTimeout(() => {
+        //     setLoading(false);
+        //     setShowCard(true);
+        // }, 8000); 
     };    
     const handleAroundClick = ()=>{
         if(Showcard){
@@ -73,6 +93,7 @@ export default function Predict() {
             setOpen(true);
         }
         setSelectedOptions(value);
+        
     }
     
     const handleClose = (event, reason) => {
@@ -107,6 +128,7 @@ export default function Predict() {
                     visibility: Showcard ? "visible" : "hidden",
                     width:CardDiseaseWidth
                 }}
+                cardContent={cardContent}
             />        
             {/* Loading */}
             <div
@@ -150,7 +172,7 @@ export default function Predict() {
             {/* accueil */}
             <div style={{ paddingLeft: "20px" }}>
                 <Typography variant="h5" sx={{ textAlign: "start", margin: "0", fontWeight: "700",color:'#1565c0',zIndex:'2',position: 'relative'}}>
-                Good Morning, Omaima!
+                Good day, {userName}!
                 </Typography>
                 <Typography sx={{ textAlign: "start", margin: "0", fontSize: "14px", color: "gray",zIndex:'2',position: 'relative' }}>
                 Ready to take control of your health today?

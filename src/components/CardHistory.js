@@ -10,10 +10,10 @@ const {currentData}=useContext(historyData);
         <tr key={index}>
             <td>
                 <Calendar style={{ marginRight: "3px", height: "16px", width: "16px" }} />
-                {element.date}
+                {element.createdAt}
             </td>
             <td style={{width:"40%",display:"flex",gap:"4px",flexWrap:"wrap",alignItems:"center",justifyContent:"start",padding:"0"}}>
-                {element.symptoms.map((s, i) => (
+                {element.Symptomes.map((s, i) => (
                     <div
                         key={i}
                         style={{
@@ -52,14 +52,14 @@ const {currentData}=useContext(historyData);
                 >
                     <div
                         style={{
-                            width: `${element.confidence}%`,
+                            width: `${Math.round(element.Confidence*100)}%`,
                             height: "100%",
                             borderRadius: "60px",
                             backgroundColor: "#00bcd4",
                         }}
                     ></div>
                 </div>
-                <h5 style={{ margin: "0 0 0 5px", fontSize: "14px" }}>{element.confidence}%</h5>
+                <h5 style={{ margin: "0 0 0 5px", fontSize: "14px" }}>{Math.round(element.Confidence*100)}%</h5>
             </td>
         </tr>
     ));
@@ -85,7 +85,7 @@ const {currentData}=useContext(historyData);
             <div className="date" style={{justifyContent:"end",display:"flex",alignItems:"center",color:"hsl(215.4 16.3% 46.9%)"}}><Calendar style={{height:"18px",color:"green",fontWeight:"900",marginRight:"3px"}}/> {element.date}</div>
             <div className="disease" style={{fontSize:"20px",fontWeight:"600"}}>{element.disease }</div>
             <h5 style={{marginTop:"12px",fontWeight:"500",fontSize:"16px",color:"hsl(215.4 16.3% 46.9%)"}}>Symptoms</h5>
-            <div className="symptoms" style={{display:"flex",gap:"20px",flexWrap:"wrap"}}> {element.symptoms.map((s, i) => (
+            <div className="symptoms" style={{display:"flex",gap:"20px",flexWrap:"wrap"}}> {element.Symptomes.map((s, i) => (
                     <div
                         key={i}
                         style={{
@@ -114,25 +114,25 @@ const {currentData}=useContext(historyData);
                 >
                     <div
                         style={{
-                            width: `${element.confidence}%`,
+                            width: `${Math.round(element.Confidence*100)}%`,
                             height: "100%",
                             borderRadius: "60px",
                             backgroundColor: "#00bcd4",
                         }}
                     ></div>
                 </div>
-                <h5 style={{ margin: "0 0 0 5px", fontSize: "14px" }}>{element.confidence}%</h5></div>
+                <h5 style={{ margin: "0 0 0 5px", fontSize: "14px" }}>{Math.round(element.Confidence*100)}%</h5></div>
         </div>
       ));
     
 const responsiveList = currentData.map((element, index) => (
   <div key={index} className="item">
     <div>
-      <strong>Date:</strong> {element.date}
+      <strong>Date:</strong> {element.createdAt}
     </div>
     <div>
       <strong>Symptoms:</strong>{" "}
-      {element.symptoms.map((s, i) => (
+      {element.Symptomes.map((s, i) => (
         <span
           key={i}
           style={{
@@ -158,11 +158,11 @@ const responsiveList = currentData.map((element, index) => (
         <div
           className="fill"
           style={{
-            width: `${element.confidence}%`,
+            width: `${element.Confidence}%`,
           }}
         ></div>
       </div>
-      <span>{element.confidence}%</span>
+      <span>{element.Confidence}%</span>
     </div>
   </div>
 ));

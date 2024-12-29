@@ -24,7 +24,8 @@
    /* ============================== 
       Importations React 
       ============================== */
-   import { useState,useRef,useReducer } from 'react';  
+   import { useState,useRef,useReducer, useEffect } from 'react';  
+   import axios from 'axios';
 
    /* ============================== 
       Importations context 
@@ -51,49 +52,33 @@
       Data and variables 
       ============================== */
    const options =['descending sort', 'ascending sort'];
-   let dataHistory = [
-    {
-        date: "01/01/2022",
-        symptoms: ["Headache", "Fever", "Cough",'jhjjjjjjj','ffffffffffffffffffffff','jhjfffffffffjjjjjj'],
-        disease: "Common Cold",
-        description: "Common cold caused by viruses",
-        confidence: 60, // percentage
-    },
-    {
-        date: "15/03/2022",
-        symptoms: ["Fatigue", "Nausea", "Vomiting"],
-        disease: "Food Poisoning",
-        description: "Illness caused by contaminated food or water",
-        confidence: 85,
-    },
-    {
-        date: "20/07/2022",
-        symptoms: ["Chest Pain", "Shortness of Breath"],
-        disease: "Heart Disease",
-        description: "Symptoms may indicate a cardiovascular issue",
-        confidence: 90,
-    },
-    {
-        date: "10/11/2022",
-        symptoms: ["Sore Throat", "Sneezing", "Runny Nose"],
-        disease: "Flu",
-        description: "Seasonal influenza caused by viral infection",
-        confidence: 70,
-    },
-    {
-        date: "05/12/2022",
-        symptoms: ["Fever", "Chills", "Sweating"],
-        disease: "Malaria",
-        description: "Parasitic disease spread by infected mosquitoes",
-        confidence: 75,
-    },
-];
-
+ 
+let dataHistory=[];
 export default function HistoryPage(){
+    console.log("rendering")
    /* ============================== 
         State and reducers 
       ============================== */
-    const [data,dispatchHistory] =useReducer(reducerHistory,dataHistory);
+      const [mydata, setm] = useState([]);
+      const [data, dispatchHistory] = useReducer(reducerHistory, mydata);
+      const [loading,setLoading] = useState(false);
+      
+      useEffect(() => {
+          const fetchData = async () => {
+              try {
+                  const response = await axios.get(`http://localhost:8080/api/history?userId=${localStorage.getItem('userId')}`);
+                  setm(response.data); // Met à jour mydata
+                  dispatchHistory({ type: 'SET_DATA', payload: response.data }); // Met à jour l'état de data avec les nouvelles données
+                  setLoading(true);
+              } catch (error) {
+                  console.error("Error fetching data:", error);
+              }
+          };
+      
+          fetchData();
+      }, []);
+      
+
     const [btnActive, setActive] = useState('list');
     const [open, setOpen] = useState(false);
     const anchorRef = useRef(null);
@@ -107,7 +92,9 @@ export default function HistoryPage(){
     const [layout,setLayout] = useState('list');
 // Calcul des éléments à afficher pour la page active
     const startIndex = (currentPage - 1) * itemsPerPage;
+    console.log('Start');
     let currentData = data.length > 0 ? data.slice(startIndex, startIndex + itemsPerPage) : [];
+    console.log('curr',currentData);
 
        /* ============================== 
        Handling events
@@ -128,7 +115,7 @@ export default function HistoryPage(){
             dispatchHistory({
                 type:'descending',
                 payload:{
-                    data:dataHistory
+                    data:data
                 }
             })
         }
@@ -136,7 +123,7 @@ export default function HistoryPage(){
             dispatchHistory({
                 type:'ascending',
                 payload:{
-                    data:dataHistory
+                    data:data
                 }
             })
         }
@@ -144,6 +131,8 @@ export default function HistoryPage(){
     
       const handleToggle = () => {
         setOpen((prevOpen) => !prevOpen);
+        console.log(data)
+
     
       };
     
@@ -231,7 +220,8 @@ export default function HistoryPage(){
                                                         type:'search',
                                                         payload:{
                                                             keyword:event.target.value,
-                                                            data:dataHistory
+                                                            data:data,
+                                                            originalData:mydata
                                                         }
                                                     });
                                                 }}

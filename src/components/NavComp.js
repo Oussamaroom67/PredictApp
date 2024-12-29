@@ -13,15 +13,18 @@ import { PageContainer } from '@toolpad/core/PageContainer';
 import '../styles/NavCompStyle.css'
 import Predict from './Predict';
 import HistoryPage from './HistoryPage';
+import { useNavigate } from 'react-router-dom';
+
 //gestion routes
 function renderPageContent(pathname) {
+
     if (pathname === '/Predict') {
         return <Predict/>; 
     }
     if (pathname === '/History') {
         return <HistoryPage/>;
     }
-    return <div>Page non trouvée.</div>;
+   
 }
 const demoTheme = extendTheme({
     colorSchemes: { light: true},
@@ -52,6 +55,7 @@ function useDemoRouter(initialPath) {
 }
 
 export default function NavComp(props){
+    const navigate = useNavigate();
     const { window } = props;
     const router = useDemoRouter('/Predict');
     // gestion responsive
@@ -60,7 +64,12 @@ export default function NavComp(props){
     const isSm = useMediaQuery(theme.breakpoints.up('sm') && theme.breakpoints.down('md'));
     const isMd = useMediaQuery(theme.breakpoints.up('md') && theme.breakpoints.down('lg'));
     const isLg = useMediaQuery(theme.breakpoints.up('lg'));
-
+    React.useEffect(() => {
+        if (router.pathname === '/logout') {
+            localStorage.removeItem('token'); // Supprime le token
+            navigate('/'); // Redirige hors de NavComp
+        }
+    }, [router.pathname, navigate]);
     const sidebarWidth = React.useMemo(() => {
         if (isXs) return 300; 
         if (isSm) return 66; 

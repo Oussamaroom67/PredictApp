@@ -51,43 +51,45 @@ export default function CardDisease(props){
     const isMd = useMediaQuery(theme.breakpoints.up('md') && theme.breakpoints.down('lg'));
     const isLg = useMediaQuery(theme.breakpoints.up('lg'));  
 
+    console.log("hannnni")
+    console.log('ss',props.cardContent);
+   
+    //state
 
-    //states
-    const [Precautions,setPrecautions]=React.useState([
-        "First Precaution",
-        "Second Precaution",
-        "Thirds Precaution"
-    ]);
-    const precautionList = Precautions.map((precaution)=>{
-        return(
-            <li style={{listStyleType: "none"}}>
-                <div style={{display:'flex',gap:'10px'}}>
-                    <FiberManualRecordIcon sx={{width:'15px',paddingTop:"0px",color :'#26a69a'}}/>
-                    {precaution}
-                </div>
-            </li>
-        );
-    })
+    // const [Precautions,setPrecautions]=React.useState([]);
+    const precautionList = Array.isArray(props.cardContent?.precautions)
+    ? props.cardContent.precautions.map((precaution, index) => (
+        <li key={index} style={{ listStyleType: "none" }}>
+          <div style={{ display: "flex", gap: "10px" }}>
+            <FiberManualRecordIcon
+              sx={{ width: "15px", paddingTop: "0px", color: "#26a69a" }}
+            />
+            {precaution}
+          </div>
+        </li>
+      ))
+    : null;
+  
     return(
         <div style={props.style}>
             <Card sx={{ padding:'16px',borderRadius:'14px'}} >
                 <CardContent sx={{display:'flex',flexDirection:'column',alignItems:'start',justifyContent:'center',gap:'20px'}}>
                     <div style={{display:'flex',justifyContent:'space-between',width:'100%'}}>
                         <Typography gutterBottom sx={{ color: '#424242', fontSize: 30,fontWeight:800 ,marginTop:'3px'}}>
-                            Common Cold
+                            {props.cardContent.disease}
                         </Typography>
                         <ShieldCheck style={{width:'50px',height:'50px',padding:'10px',backgroundColor:'#b2dfdb',borderRadius:'50%',color:'#009688'}}/>
                     </div>
                     <div>
                         <Typography sx={{color:'#616161'}}>
-                        In humans, fungal infections occur when an invading fungus takes over an area of the body and is too much for the immune system to handle. Fungi can live in the air, soil, water, and plants. There are also some fungi that live naturally in the human body. Like many microbes, there are helpful fungi and harmful fungi
+                            {props.cardContent.description}
                         </Typography>
                     </div>
                     <div style={{width:'100%',display:'flex',flexDirection:'column',justifyContent:'start'}}>
                         <Typography variant="subtitle1" gutterBottom>
                             Confidence Level
                         </Typography>
-                        <ConfidenceLevel value={78} />
+                        <ConfidenceLevel value={Math.round(props.cardContent.Confidence*100)} />
                     </div>
                     <div style={{width:'100%'}}>
                         <Accordion>
