@@ -33,13 +33,14 @@ function Login(){
               body: JSON.stringify(loginInfo)
            });
            const result = await response.json();
-           const {success,message,jwtToken,name,error}=result;
+           const {success,message,jwtToken,name,error,userId}=result;
            if(success){
                handleSuccess(message);
                localStorage.setItem('token',jwtToken);
-               localStorage.setItem('loggedInUser',name);
+               localStorage.setItem('userName',name);
+               localStorage.setItem('userId',userId);
                setTimeout(()=>{
-                  navigate('/home')
+                  navigate('/predict',{replace:true})
                },1000)
             }else if(error){
                 const details=error?.details[0].message;

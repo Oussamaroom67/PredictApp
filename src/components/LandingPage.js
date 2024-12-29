@@ -1,5 +1,6 @@
 import Container from '@mui/material/Container';
 import React,{useEffect,useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
@@ -10,7 +11,12 @@ import HistoryOutlinedIcon from '@mui/icons-material/HistoryOutlined';
 
 export default function LandingPage() {
     const [loading, setLoading] = useState(true);
-
+    const [token, setToken] = useState();
+    const navigate=useNavigate();
+    //token
+    useEffect(()=>{
+        setToken(localStorage.getItem('token'));
+    },[])
     // Simuler le chargement avec useEffect
     useEffect(() => {
         const timer = setTimeout(() => setLoading(false), 4000); // Ajustez le délai selon vos besoins
@@ -44,7 +50,16 @@ export default function LandingPage() {
                             <div className='title'>
                                 <h1 style={{ fontSize: "60px" }}>Transforming Healthcare</h1>
                                 <p style={{ fontSize: "20px", marginBottom: "20px", color: 'hsl(215.4 16.3% 46.9%)' }}>Predict diseases based on symptoms and get personalized health insights</p>
-                                <Button variant="contained" endIcon={<KeyboardArrowRightOutlinedIcon />} style={{ borderRadius: "12px", padding: "10px 23px", fontSize: "12px", background: "linear-gradient(135deg,#00b6d6 0%,#0adaff 100%)", fontWeight: "500" }} className='btn'>
+                                <Button variant="contained" endIcon={<KeyboardArrowRightOutlinedIcon />} style={{ borderRadius: "12px", padding: "10px 23px", fontSize: "12px", background: "linear-gradient(135deg,#00b6d6 0%,#0adaff 100%)", fontWeight: "500" }} className='btn' onClick={()=>{
+                                    
+                                     if (!token) {
+                                        navigate("/login");
+                                     }
+                                     else {
+                                         navigate("/predict");
+                                     }
+                                    
+                                }}>
                                     Get Started
                                 </Button>
                             </div>
