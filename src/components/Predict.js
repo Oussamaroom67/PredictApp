@@ -13,6 +13,7 @@ import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 //size
 import { useMediaQuery } from '@mui/material';
@@ -30,6 +31,8 @@ const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
 
 export default function Predict() {
+    const navigate = useNavigate();
+
     // gestion responsive
     const theme = useTheme(); 
     const isXs = useMediaQuery(theme.breakpoints.down('sm'));
@@ -57,6 +60,22 @@ export default function Predict() {
     const [userName, setUserName] = React.useState('Unknown');
     const [userId, setUserId]=React.useState();
     const [cardContent, setCardContent] = React.useState({});
+    React.useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get("token") || localStorage.getItem("token");
+        const userId = urlParams.get("userId") || localStorage.getItem("userId");
+        const userName = urlParams.get("userName") || localStorage.getItem("userName");
+            
+    
+        if (token) {
+            localStorage.setItem("token", token);
+            localStorage.setItem("userId", userId);
+            localStorage.setItem("userName", userName);
+        } else {
+            navigate("/login"); // Si le token n'existe pas, rediriger vers la page de connexion
+        }
+    }, [navigate]);
+    
     React.useEffect(()=>{
         setUserId(localStorage.getItem("userId"));
         setUserName(localStorage.getItem("userName"))
@@ -243,6 +262,7 @@ export default function Predict() {
                         )}
                     />
                     <Button 
+                    disabled={selectedOptions.length <=2}
                     onClick={handleClick}
                     variant="contained"    
                     sx={{

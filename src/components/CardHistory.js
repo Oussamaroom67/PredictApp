@@ -82,7 +82,7 @@ const {currentData}=useContext(historyData);
     const diseaseListCard=currentData.map((element, index) => (
         
         <div className="grid-card" style={{display:"flex",width:"30%",flexDirection:"column",padding:"20px 18px",borderRadius:"16px",gap:"15px",backgroundColor:"white", boxShadow: "0 8px 30px #0000000f"}}>
-            <div className="date" style={{justifyContent:"end",display:"flex",alignItems:"center",color:"hsl(215.4 16.3% 46.9%)"}}><Calendar style={{height:"18px",color:"green",fontWeight:"900",marginRight:"3px"}}/> {element.date}</div>
+            <div className="date" style={{justifyContent:"end",display:"flex",alignItems:"center",color:"hsl(215.4 16.3% 46.9%)"}}><Calendar style={{height:"18px",color:"green",fontWeight:"900",marginRight:"3px"}}/> {element.createdAt}</div>
             <div className="disease" style={{fontSize:"20px",fontWeight:"600"}}>{element.disease }</div>
             <h5 style={{marginTop:"12px",fontWeight:"500",fontSize:"16px",color:"hsl(215.4 16.3% 46.9%)"}}>Symptoms</h5>
             <div className="symptoms" style={{display:"flex",gap:"20px",flexWrap:"wrap"}}> {element.Symptomes.map((s, i) => (
@@ -128,7 +128,8 @@ const {currentData}=useContext(historyData);
 const responsiveList = currentData.map((element, index) => (
   <div key={index} className="item">
     <div>
-      <strong>Date:</strong> {element.createdAt}
+      <strong>Date:</strong> 
+      {element.createdAt}
     </div>
     <div>
       <strong>Symptoms:</strong>{" "}

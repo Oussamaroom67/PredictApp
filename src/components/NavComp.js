@@ -67,6 +67,8 @@ export default function NavComp(props){
     React.useEffect(() => {
         if (router.pathname === '/logout') {
             localStorage.removeItem('token'); // Supprime le token
+            localStorage.removeItem('userId'); 
+            localStorage.removeItem('userName'); 
             navigate('/'); // Redirige hors de NavComp
         }
     }, [router.pathname, navigate]);

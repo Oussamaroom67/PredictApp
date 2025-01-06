@@ -26,9 +26,7 @@ const ProtectedRoute = ({ children }) => {
       <Route
         path="/predict"
         element={
-          <ProtectedRoute>
             <NavComp />
-          </ProtectedRoute>
         }
       />
     </Routes>
