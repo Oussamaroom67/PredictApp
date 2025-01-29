@@ -30,28 +30,32 @@
 ### 1. **Landing Page** 🏠  
 *Introduction to the app, Google login button, and brief explanation of features.*
 
-![Landing Page Screenshot](./screens/landing-page.png)
+![image](https://github.com/user-attachments/assets/c0fd36f4-844c-43c1-80e6-a9bdd010cf22)
+
 
 ---
 
 ### 2. **Login** 🔑  
 *Login page with Google OAuth authentication.*
 
-![Login Page Screenshot](./screens/login.png)
+![image](https://github.com/user-attachments/assets/46ba88f1-6cc7-45d0-863f-72aec95e094b)
+
 
 ---
 
 ### 3. **Home** 🏡  
 *Main screen where users can input data and make predictions.*
 
-![Home Page Screenshot](./screens/home.png)
+![image](https://github.com/user-attachments/assets/81f67341-81e9-4b94-a176-e55943dc1bbe)
+
 
 ---
 
 ### 4. **Prediction History** 📅  
 *Displays a list of all past predictions with results and timestamps.*
 
-![History Page Screenshot](./screens/history.png)
+![image](https://github.com/user-attachments/assets/e745d575-f8b3-4865-8afe-bd3519af9d40)
+
 
 ---
 
