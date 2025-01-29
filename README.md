@@ -48,6 +48,8 @@
 
 ![image](https://github.com/user-attachments/assets/81f67341-81e9-4b94-a176-e55943dc1bbe)
 
+![WhatsApp Image 2025-01-30 à 00 40 53_90e81e61](https://github.com/user-attachments/assets/41aa3145-961e-4d02-927c-9c2be1c7289c)
+
 
 ---
 
@@ -55,6 +57,8 @@
 *Displays a list of all past predictions with results and timestamps.*
 
 ![image](https://github.com/user-attachments/assets/e745d575-f8b3-4865-8afe-bd3519af9d40)
+
+![image](https://github.com/user-attachments/assets/60368d26-1293-4d2c-9d76-d01668c91675)
 
 
 ---
