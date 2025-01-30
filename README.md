@@ -38,7 +38,8 @@
 
 ---
 
-![localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4 (3)](https://github.com/user-attachments/assets/d8ed9633-219c-4184-a0d0-ac58a563104c)
+<img src="https://github.com/user-attachments/assets/d8ed9633-219c-4184-a0d0-ac58a563104c" alt="localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4 (3)" width="300">
+
 
 
 ---
