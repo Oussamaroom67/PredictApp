@@ -109,6 +109,12 @@
 
 ---
 
+## 📜 License
+This project is licensed under the **MIT License**.
+
+
+---
+
 ## Contact Us
 
 If you'd like to suggest new features or contribute to the project, feel free to contact us on LinkedIn:
