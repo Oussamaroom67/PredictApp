@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# PredictApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**PredictApp** is a React-based application that allows users to make predictions through a form and view their past prediction history. The app is secured with a login system using Google OAuth. Users can easily navigate through a clean and **responsive** interface, ensuring a seamless experience across different devices and screen sizes.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Make Predictions** 🔮: Submit data via a form and get real-time predictions.
+- **View History** 📜: Access and review all previous predictions with results.
+- **Google OAuth Login** 🔐: Secure authentication using Google login.
+- **Responsive Design** 📱💻: Seamless experience across devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React** ⚛️
+- **Material UI** 🎨
+- **Axios** 🌐
+- **Lottie** 🎞️
+- **Google OAuth** 🔑
+- **React Router** 🚦
+- **React Toastify** 🗨️
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Screens to be Added
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. **Landing Page** 🏠  
+*Introduction to the app, Google login button, and brief explanation of features.*
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://github.com/user-attachments/assets/8aaa8fce-9e1e-4be0-b78a-2d2f0a94eebb)
+---
+![image](https://github.com/user-attachments/assets/c0fd36f4-844c-43c1-80e6-a9bdd010cf22)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<div style="text-align: center;">
+  <img src="https://github.com/user-attachments/assets/d8ed9633-219c-4184-a0d0-ac58a563104c" alt="localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4 (3)" width="300">
+</div>
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. **Login** 🔑  
+*Login page with Google OAuth authentication.*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![image](https://github.com/user-attachments/assets/46ba88f1-6cc7-45d0-863f-72aec95e094b)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3. **Home** 🏡  
+*Main screen where users can input data and make predictions.*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![image](https://github.com/user-attachments/assets/81f67341-81e9-4b94-a176-e55943dc1bbe)
+---
+![WhatsApp Image 2025-01-30 à 00 40 53_90e81e61](https://github.com/user-attachments/assets/41aa3145-961e-4d02-927c-9c2be1c7289c)
 
-### Code Splitting
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="https://github.com/user-attachments/assets/d99b5ac4-b522-4fe0-ae16-c8021c134fcf" alt="localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4 (1)" width="300">
+  <img src="https://github.com/user-attachments/assets/7d6e690c-e0fd-478b-a5c6-69f9eedeb67e" alt="localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4 (2)" width="300">
+</div>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+### 4. **Prediction History** 📅  
+*Displays a list of all past predictions with results and timestamps.*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![image](https://github.com/user-attachments/assets/e745d575-f8b3-4865-8afe-bd3519af9d40)
+---
+![image](https://github.com/user-attachments/assets/60368d26-1293-4d2c-9d76-d01668c91675)
+---
+![image](https://github.com/user-attachments/assets/0fb05448-3e07-4406-8015-1f963f00ec31)
 
-### Advanced Configuration
+<div style="text-align: center;">
+  <img src="https://github.com/user-attachments/assets/84c49476-f08d-4bf8-ae0d-ddf3902f8424" alt="localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4MDMw" width="300">
+</div>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Clone the repository:
 
-### `npm run build` fails to minify
+   ```bash
+   git clone https://github.com/Oussamaroom67/PredictApp
+   ```
+2. Install dependencies:
+   ```bash
+   cd PredictApp
+   npm install
+   ```
+3. Start the app:
+   ```bash
+   npm start
+   ```
+  The app will be available at http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## Scripts
+
+- **start** ▶️: Launch the development server.
+- **build** 🔨: Build the production version of the app.
+- **test** ✅: Run unit tests.
+- **eject** ⚙️: Customize the app configuration.
+
+---
+
+## Contact Us
+
+If you'd like to suggest new features or contribute to the project, feel free to contact us on LinkedIn:
+
+- [Oussama Nouhar](https://www.linkedin.com/in/oussama-nouhar-3156132aa)
+- [Omaima Siaf](https://www.linkedin.com/in/omaima-siaf-b636132aa/)
+- [Souhayla Ghanem](https://www.linkedin.com/in/souhayla-ghanem-28791b306/)
+
+---
+
+## Contributors
+
+- Oussama Nouhar
+- Omaima Siaf
+- Souhayla Ghanem
+
