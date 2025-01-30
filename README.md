@@ -1,6 +1,6 @@
 # PredictApp
 
-**PredictApp** is a React-based application that allows users to make predictions through a form and view their past prediction history. The app is secured with a login system using Google OAuth. Users can easily navigate through a clean and responsive interface.
+**PredictApp** is a React-based application that allows users to make predictions through a form and view their past prediction history. The app is secured with a login system using Google OAuth. Users can easily navigate through a clean and **responsive** interface, ensuring a seamless experience across different devices and screen sizes.
 
 ---
 
@@ -30,7 +30,15 @@
 ### 1. **Landing Page** 🏠  
 *Introduction to the app, Google login button, and brief explanation of features.*
 
+![image](https://github.com/user-attachments/assets/8aaa8fce-9e1e-4be0-b78a-2d2f0a94eebb)
+
+---
+
 ![image](https://github.com/user-attachments/assets/c0fd36f4-844c-43c1-80e6-a9bdd010cf22)
+
+---
+
+![localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4 (3)](https://github.com/user-attachments/assets/d8ed9633-219c-4184-a0d0-ac58a563104c)
 
 
 ---
@@ -52,6 +60,14 @@
 
 ![WhatsApp Image 2025-01-30 à 00 40 53_90e81e61](https://github.com/user-attachments/assets/41aa3145-961e-4d02-927c-9c2be1c7289c)
 
+---
+
+![localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4 (1)](https://github.com/user-attachments/assets/d99b5ac4-b522-4fe0-ae16-c8021c134fcf)
+
+---
+
+![localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4 (2)](https://github.com/user-attachments/assets/7d6e690c-e0fd-478b-a5c6-69f9eedeb67e)
+
 
 ---
 
@@ -63,6 +79,13 @@
 ---
 
 ![image](https://github.com/user-attachments/assets/60368d26-1293-4d2c-9d76-d01668c91675)
+
+---
+
+![image](https://github.com/user-attachments/assets/0fb05448-3e07-4406-8015-1f963f00ec31)
+
+---
+![localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4MDMw](https://github.com/user-attachments/assets/84c49476-f08d-4bf8-ae0d-ddf3902f8424)
 
 
 ---
