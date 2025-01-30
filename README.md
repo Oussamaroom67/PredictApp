@@ -32,11 +32,7 @@
 
 ![image](https://github.com/user-attachments/assets/8aaa8fce-9e1e-4be0-b78a-2d2f0a94eebb)
 
----
-
 ![image](https://github.com/user-attachments/assets/c0fd36f4-844c-43c1-80e6-a9bdd010cf22)
-
----
 
 <img src="https://github.com/user-attachments/assets/d8ed9633-219c-4184-a0d0-ac58a563104c" alt="localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4 (3)" width="300">
 
@@ -57,15 +53,9 @@
 
 ![image](https://github.com/user-attachments/assets/81f67341-81e9-4b94-a176-e55943dc1bbe)
 
----
-
 ![WhatsApp Image 2025-01-30 à 00 40 53_90e81e61](https://github.com/user-attachments/assets/41aa3145-961e-4d02-927c-9c2be1c7289c)
 
----
-
 <img src="https://github.com/user-attachments/assets/d99b5ac4-b522-4fe0-ae16-c8021c134fcf" alt="localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4 (1)" width="300">
-
----
 
 <img src="https://github.com/user-attachments/assets/7d6e690c-e0fd-478b-a5c6-69f9eedeb67e" alt="localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4 (2)" width="300">
 
@@ -77,15 +67,9 @@
 
 ![image](https://github.com/user-attachments/assets/e745d575-f8b3-4865-8afe-bd3519af9d40)
 
----
-
 ![image](https://github.com/user-attachments/assets/60368d26-1293-4d2c-9d76-d01668c91675)
 
----
-
 ![image](https://github.com/user-attachments/assets/0fb05448-3e07-4406-8015-1f963f00ec31)
-
----
 
 <img src="https://github.com/user-attachments/assets/84c49476-f08d-4bf8-ae0d-ddf3902f8424" alt="localhost_3000_predict_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 eyJlbWFpbCI6Im9tb3VzYWdAZ21haWwuY29tIiwiX2lkIjoiNjc3MDY3MmQ0ZWY2NWUzNDA4Y2Y5MzEzIiwibmFtZSI6Im91c3NhbWEiLCJpYXQiOjE3MzgxOTM5MDgsImV4cCI6MTczODI4MDMw" width="300">
 
