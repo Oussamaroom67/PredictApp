@@ -106,7 +106,7 @@ export default function NavComp(props){
             theme={demoTheme}
             window={demoWindow}
             branding={{
-                logo: <img src="/logo.png" alt="My Logo" style={{ height: '200px',marginRight:'10px' }} />,
+                logo: <img src="/logo1.png" alt="My Logo" style={{ height: '200px',marginRight:'10px' }} />,
                 title: 'Medino',
                 homeUrl: '/',
             }}

@@ -83,24 +83,26 @@ export default function Predict() {
     // handlers
     const handleClick = async () => {
         setLoading(true);
-        try{
+        try {
             const symptomes = selectedOptions.map(item => item.title);
-
-            const response = await axios.post('http://localhost:8080/api/predict', {symptomes: symptomes,userId:userId});
+            const response = await axios.post('http://localhost:8080/api/predict', {
+                symptomes: symptomes,
+                userId: userId
+            });
             console.log(response.data);
             setCardContent(response.data);
-            setShowCard(true);
-        }catch(e){
+    
+            // Attendre 3 secondes avant de désactiver le loading et d'afficher la carte
+            setTimeout(() => {
+                setLoading(false);
+                setShowCard(true);
+            }, 3000); // 3000 millisecondes = 3 secondes
+        } catch (e) {
             console.error(e);
+            setLoading(false); // Désactiver le loading en cas d'erreur
         }
-        finally{
-            setLoading(false);
-        }
-        // setTimeout(() => {
-        //     setLoading(false);
-        //     setShowCard(true);
-        // }, 8000); 
-    };    
+    };
+    
     const handleAroundClick = ()=>{
         if(Showcard){
             setShowCard(false);
